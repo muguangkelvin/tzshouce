@@ -1,0 +1,17 @@
+<div class="breadcrumbs">
+  <a href="/">首页</a>
+  <span>/</span>
+  {{ if .Section }}
+    <a href="/{{ .Section }}/">
+      {{ if eq .Section "jichang-tuijian" }}精选机场推荐
+      {{ else if eq .Section "jiaocheng" }}新手教程
+      {{ else if eq .Section "jishu" }}协议与进阶
+      {{ else if eq .Section "wenti" }}避坑与 FAQ
+      {{ else if eq .Section "service" }}服务专区
+      {{ else if eq .Section "providers" }}28 家机场测评专区
+      {{ else }}{{ .Section }}{{ end }}
+    </a>
+    <span>/</span>
+  {{ end }}
+  <span>{{ .Title }}</span>
+</div>

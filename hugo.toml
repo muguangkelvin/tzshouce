@@ -1,0 +1,71 @@
+baseURL = 'https://tzshouce.cyou/'
+languageCode = 'zh-CN'
+title = '梯子手册 - 新手科学上网与稳定高速机场推荐指南 '
+
+hasCJKLanguage = true
+summaryLength = 120
+paginate = 12
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
+[params]
+  brandName = '梯子手册'
+  domain = 'https://tzshouce.cyou'
+  description = '梯子手册（tzshouce.cyou）面向翻墙与科学上网新手的实用避坑指南与机场推荐导航。极简内容型 SEO 博客，主打新手教程、机场评测、选购推荐与报错排查。'
+  keywords = '梯子手册, 机场推荐, 梯子推荐, 魔法上网教程, 科学上网指南, 便宜机场推荐, 稳定梯子节点, IPLC专线机场, 翻墙机场测速, 节点订阅转换, 4K秒开机场, 高性价比梯子, 机场优惠码'
+  heroTitle = '梯子手册 · 新手科学上网指南与稳定机场推荐'
+  heroSub = '极简纯静态 SEO 知识库，聚焦零基础 Clash/小火箭配置教程、高性价比 IPLC 专线机场测评及常见报错排查。全站保持人工定期复核更新。'
+  tgLink = 'https://t.me/+MMnfFgswXis3MjNl'
+  tgText = 'Telegram 交流群'
+  lastCheckedDate = '2026-09-28'
+
+[outputFormats.JSON]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[[menu.main]]
+  name = '首页'
+  url = '/'
+  weight = 1
+
+[[menu.main]]
+  name = '精选机场推荐'
+  url = '/jichang-tuijian/'
+  weight = 2
+
+[[menu.main]]
+  name = '新手教程'
+  url = '/jiaocheng/'
+  weight = 3
+
+[[menu.main]]
+  name = '协议与进阶'
+  url = '/jishu/'
+  weight = 4
+
+[[menu.main]]
+  name = '避坑与 FAQ'
+  url = '/wenti/'
+  weight = 5
+
+[[menu.main]]
+  name = '服务专区'
+  url = '/service/'
+  weight = 6
+
+[[menu.main]]
+  name = '归档'
+  url = '/archives/'
+  weight = 7

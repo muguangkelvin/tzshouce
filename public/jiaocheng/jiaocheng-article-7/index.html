@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>如何正确配置规则分流 (Rule Mode)？避免国内流量走代理跑流量 - 梯子手册</title>
+  <meta name="description" content="详细图解 Clash 规则分流 (Rule Mode) 的语法结构与配置文件定制。防止国内微信、淘宝、百度流量误走代理跑光机场配额。">
+  <link rel="canonical" href="https://tzshouce.cyou/jiaocheng/jiaocheng-article-7/">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="如何正确配置规则分流 (Rule Mode)？避免国内流量走代理跑流量">
+  <meta property="og:description" content="详细图解 Clash 规则分流 (Rule Mode) 的语法结构与配置文件定制。防止国内微信、淘宝、百度流量误走代理跑光机场配额。">
+  <meta property="og:url" content="https://tzshouce.cyou/jiaocheng/jiaocheng-article-7/">
+  <meta property="og:site_name" content="梯子手册">
+
+  
+  
+  <link rel="stylesheet" href="/css/main.css">
+
+  
+  
+  <script src="/js/search.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <a href="/" class="brand-logo" title="梯子手册 - 首页">
+        <span class="logo-icon">TZ</span>
+        <span>梯子手册</span>
+      </a>
+
+      <div class="header-right">
+        <form class="header-search" id="searchForm" action="/wenti/" method="get">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="searchInput" placeholder="搜索教程、节点、报错..." aria-label="搜索框">
+        </form>
+
+        <a href="https://t.me/+MMnfFgswXis3MjNl" class="tg-btn" target="_blank" rel="sponsored nofollow noopener" title="Telegram 交流群">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.96 1.25-5.54 3.69-.52.36-1 .54-1.42.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.45 3.82-1.59 4.61-1.87 5.13-1.88.11 0 .37.03.54.18.14.12.18.29.2.45-.01.07.01.21 0 .36z"/></svg>
+          <span>TG 群</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link ">首页</a></li>
+        <li><a href="/jichang-tuijian/" class="nav-link ">精选机场推荐</a></li>
+        <li><a href="/jiaocheng/" class="nav-link active">新手教程</a></li>
+        <li><a href="/jishu/" class="nav-link ">协议与进阶</a></li>
+        <li><a href="/wenti/" class="nav-link ">避坑与 FAQ</a></li>
+        <li><a href="/service/" class="nav-link ">服务专区</a></li>
+        <li><a href="/archives/" class="nav-link ">归档</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <main>
+    
+<div class="single-container">
+  <div class="breadcrumbs">
+  <a href="/">首页</a>
+  <span>/</span>
+  
+    <a href="/jiaocheng/">
+      新手教程
+      
+    </a>
+    <span>/</span>
+  
+  <span>如何正确配置规则分流 (Rule Mode)？避免国内流量走代理跑流量</span>
+</div>
+
+
+  <article class="single-post">
+    <header class="post-header">
+      <h1 class="post-title">如何正确配置规则分流 (Rule Mode)？避免国内流量走代理跑流量</h1>
+      <div class="post-meta">
+        <span>发布于 2026-09-28</span>
+        <span>作者: 梯子手册</span>
+        <span>分类: jiaocheng</span>
+        <span>阅读时间: 约 2 分钟</span>
+        <span>字数: 979 字</span>
+      </div>
+    </header>
+
+    
+    
+    <details class="post-toc" open>
+      <summary>📌 本文目录导航 (Table of Contents)</summary>
+      <nav id="TableOfContents">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-什么是规则分流-rule-mode">一、 什么是规则分流 (Rule Mode)？</a></li>
+    <li><a href="#二-常用分流规则语法与自定义修改">二、 常用分流规则语法与自定义修改</a>
+      <ul>
+        <li><a href="#-2026-本站首推高可用稳定机场推荐表">🏆 2026 本站首推高可用稳定机场推荐表</a></li>
+        <li><a href="#-本站精选相关资源与深度指南推荐">🌐 本站精选相关资源与深度指南推荐：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </nav>
+    </details>
+    
+
+    
+    <div class="post-content">
+      <h1 id="如何正确配置规则分流-rule-mode避免国内流量走代理跑流量">如何正确配置规则分流 (Rule Mode)？避免国内流量走代理跑流量</h1>
+<p>很多新手在使用代理软件时，常常遭遇“开启代理后微信图片加载慢”、“百度打不开”、“机场流量几天就被跑光”的窘境。这往往是因为误开启了全局代理模式（Global Mode），导致所有的国内流量都被强制绕道海外节点传输。</p>
+<p>本文将为你深度拆解 <strong>规则分流 (Rule Mode)</strong> 的工作原理，并教你如何合理配置分流策略。</p>
+<hr>
+<h2 id="一-什么是规则分流-rule-mode">一、 什么是规则分流 (Rule Mode)？</h2>
+<p>规则分流是指代理客户端（如 <a href="/jiaocheng/jiaocheng-article-1/">Clash for Windows</a>、<a href="/jiaocheng/jiaocheng-article-2/">Shadowrocket</a>）根据预先设定的规则库，自动对网络请求进行智能判定：</p>
+<ol>
+<li><strong>Direct (直连规则)</strong>：判定为国内域名（如 <code>*.baidu.com</code>、<code>*.qq.com</code>）或国内 IP 段，数据直接走本地电信/联通/移动网络，不经过机场节点，速度极快且<strong>不消耗机场流量</strong>。</li>
+<li><strong>Proxy (代理规则)</strong>：判定为海外域名（如 <code>*.google.com</code>、<code>*.youtube.com</code>、<code>*.openai.com</code>），数据交由 <a href="/providers/lingdongyun/">灵动云</a> 或 <a href="/providers/twilight/">暮光网络</a> 的海外节点加速传输。</li>
+<li><strong>Reject (拦截规则)</strong>：判定为广告追踪域名（如 <code>*.doubleclick.net</code>），客户端自动丢弃请求，起到网页纯净无广告的效果。</li>
+</ol>
+<hr>
+<h2 id="二-常用分流规则语法与自定义修改">二、 常用分流规则语法与自定义修改</h2>
+<p>在 Clash 配置文件中，常见的分流语法包括：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">rules</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 域名后缀匹配 (DOMAINS-SUFFIX)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">DOMAIN-SUFFIX,google.com,节点选择</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">DOMAIN-SUFFIX,github.com,节点选择</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 域名关键字匹配 (DOMAIN-KEYWORD)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">DOMAIN-KEYWORD,bilibili,DIRECT</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># IP 段匹配 (IP-CIDR)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">IP-CIDR,223.5.5.5/32,DIRECT</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># 兜底规则 (MATCH)</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">MATCH,MATCH-GROUP</span>
+</span></span></code></pre></div><hr>
+<h3 id="-2026-本站首推高可用稳定机场推荐表">🏆 2026 本站首推高可用稳定机场推荐表</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">综合排名</th>
+<th style="text-align:center">机场品牌</th>
+<th style="text-align:center">线路类型</th>
+<th style="text-align:center">参考价格</th>
+<th style="text-align:center">专属优惠码</th>
+<th style="text-align:center">官方网站通道</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">🥇 1</td>
+<td style="text-align:center"><strong><a href="/providers/lingdongyun/">灵动云</a></strong></td>
+<td style="text-align:center">IPLC 物理专线 / 0丢包 / 游戏低延迟</td>
+<td style="text-align:center">¥15/月起</td>
+<td style="text-align:center"><code>ld88</code> (8折)</td>
+<td style="text-align:center"><a href="https://varnexa.lingdongaff.com/#/?code=JoIy7bO1" target="_blank" rel="sponsored nofollow noopener">直达灵动云官网 →</a></td>
+</tr>
+<tr>
+<td style="text-align:center">🥈 2</td>
+<td style="text-align:center"><strong><a href="/providers/twilight/">暮光网络</a></strong></td>
+<td style="text-align:center">IEPL 专线 / 晚高峰 4K秒开</td>
+<td style="text-align:center">¥15/月起</td>
+<td style="text-align:center"><code>mm88</code> (8折)</td>
+<td style="text-align:center"><a href="https://varnexa.twilightaff.com/#/?code=KvGly3jY" target="_blank" rel="sponsored nofollow noopener">直达暮光网络官网 →</a></td>
+</tr>
+<tr>
+<td style="text-align:center">🥉 3</td>
+<td style="text-align:center"><strong><a href="/providers/flycat-cloud/">飞猫云</a></strong></td>
+<td style="text-align:center">IEPL 专线 / 包含自研一键客户端</td>
+<td style="text-align:center">折合 ¥7/月起</td>
+<td style="text-align:center"><code>flycat888</code> (8折)</td>
+<td style="text-align:center"><a href="https://flycat1.flycatvipaff.cc/#/?code=FOdfcRFH" target="_blank" rel="sponsored nofollow noopener">直达飞猫云官网 →</a></td>
+</tr>
+<tr>
+<td style="text-align:center">🎖️ 4</td>
+<td style="text-align:center"><strong><a href="/providers/breezenet/">微风网络</a></strong></td>
+<td style="text-align:center">BGP 多线中继 / 外贸轻量</td>
+<td style="text-align:center">折合 ¥8/月起</td>
+<td style="text-align:center"><code>breeze88</code> (8折)</td>
+<td style="text-align:center"><a href="https://edp01.breezenetaff.com/#/?code=He4n3zxg" target="_blank" rel="sponsored nofollow noopener">直达微风网络官网 →</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-本站精选相关资源与深度指南推荐">🌐 本站精选相关资源与深度指南推荐：</h3>
+<ul>
+<li>🏆 <strong>大牌机场测评与优惠</strong>：<a href="/providers/lingdongyun/">灵动云 IPLC 专线测评</a> | <a href="/providers/twilight/">暮光网络影音解锁测评</a> | <a href="/providers/flycat-cloud/">飞猫云 IEPL 专线测评</a> | <a href="/providers/breezenet/">微风网络 Breezenet 测评</a></li>
+<li>📖 <strong>客户端图文教程</strong>：<a href="/jiaocheng/jiaocheng-article-1/">Clash for Windows 下载与配置</a> | <a href="/jiaocheng/jiaocheng-article-2/">iOS Shadowrocket 小火箭教程</a> | <a href="/jiaocheng/jiaocheng-article-3/">Sing-box 协议配置</a> | <a href="/jiaocheng/jiaocheng-article-5/">Android 客户端配置</a></li>
+<li>📊 <strong>综合排行榜与技术深度</strong>：<a href="/jichang-tuijian/jichang-tuijian-article-12/">2026 年 28 家机场综合对比大盘点</a> | <a href="/jishu/jishu-article-1/">IPLC 物理专线与 BGP 中继原理解析</a></li>
+<li>❓ <strong>常见报错排查</strong>：<a href="/wenti/wenti-article-1/">节点 Timeout 超时解决</a> | <a href="/wenti/wenti-article-2/">官方防走丢备用域名</a> | <a href="/wenti/wenti-article-4/">订阅拉取失败排查</a></li>
+</ul>
+
+    </div>
+
+    
+    <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-top: 2rem;">
+      <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">💡 推荐场景匹配服务</h3>
+      <p style="font-size: 0.9rem; color: var(--secondary); margin-bottom: 0.85rem;">如果您正在寻找超稳定、低延迟且不过期的代理节点，推荐优先尝试 <strong>灵动云</strong> 或 <strong>飞猫云</strong> 专线服务。</p>
+      <a href="https://varnexa.lingdongaff.com/#/?code=JoIy7bO1" class="btn-mod-primary" target="_blank" rel="sponsored nofollow noopener">查看灵动云最新套餐通道 (8折码: ld88) →</a>
+    </div>
+
+    
+    
+
+    
+    <div style="margin-top: 2.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+      <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem;">📚 场景相关推荐阅读</h3>
+      <ul style="list-style: none; line-height: 1.8; font-size: 0.95rem;">
+        <li><a href="/jiaocheng/jiaocheng-article-1/">· Clash for Windows 零基础下载、安装与订阅导入图文步骤</a></li>
+        <li><a href="/jiaocheng/jiaocheng-article-2/">· Shadowrocket (小火箭) iPhone / iPad 扫码与一键导入节点指南</a></li>
+        <li><a href="/jishu/jishu-article-1/">· IPLC 专线与普通中继机场传输原理对比解析</a></li>
+        <li><a href="/wenti/wenti-article-1/">· 节点连接超时 Timeout 怎么解决？排错清单</a></li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="container">
+    <div class="footer-content-papermod">
+      <div>
+        <div style="font-weight: 800; color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">梯子手册 </div>
+        <p style="line-height: 1.6; margin-bottom: 0.75rem;">
+          梯子手册 面向翻墙与科学上网新手，提供科学上网新手导航、稳定机场节点测速、翻墙客户端配置手册与防走丢指南。纯静态极简 content-first SEO 博客。
+        </p>
+        <p style="font-size: 0.8rem; color: #64748b;">
+          【合作与更新声明】：本站保持独立评测与定期核验更新。部分页面包含第三方合规推广链接，使用优惠码可在结算页获得专属折扣。
+        </p>
+      </div>
+
+      <div>
+        <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">导航索引</div>
+        <ul style="list-style: none; line-height: 1.8;">
+          <li><a href="/jichang-tuijian/">精选机场推荐</a></li>
+          <li><a href="/jiaocheng/">新手教程</a></li>
+          <li><a href="/jishu/">协议与进阶</a></li>
+          <li><a href="/wenti/">避坑与 FAQ 中心</a></li>
+          <li><a href="/service/">优质服务专区</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">服务推荐</div>
+        <ul style="list-style: none; line-height: 1.8;">
+          <li><a href="/providers/lingdongyun/">灵动云 (8折: ld88)</a></li>
+          <li><a href="/providers/twilight/">暮光网络 (8折: mm88)</a></li>
+          <li><a href="/providers/flycat-cloud/">飞猫云 (8折: flycat888)</a></li>
+          <li><a href="/providers/breezenet/">微风网络 Breezenet (8折: breeze88)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">关于与合规</div>
+        <ul style="list-style: none; line-height: 1.8;">
+          <li><a href="/about/">关于本站</a></li>
+          <li><a href="/contact/">联系我们与纠错</a></li>
+          <li><a href="https://t.me/+MMnfFgswXis3MjNl" target="_blank" rel="sponsored nofollow noopener">Telegram 交流群</a></li>
+          <li><a href="/archives/">文章归档</a></li>
+          <li><a href="/privacy/">隐私政策</a></li>
+          <li><a href="/disclaimer/">免责声明</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 梯子手册 · Powered by Hugo Extended & PaperMod Design System.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

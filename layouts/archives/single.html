@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="single-container">
+  {{ partial "breadcrumbs.html" . }}
+
+  <div style="margin: 2rem 0;">
+    <h1 style="font-size: 2rem; font-weight: 900; color: var(--primary); margin-bottom: 1rem;">📅 文章归档 (Archives)</h1>
+
+    {{ range (.Site.RegularPages.GroupByDate "2006") }}
+    <div class="archive-year">{{ .Key }} 年</div>
+    <ul class="archive-list">
+      {{ range .Pages }}
+      <li class="archive-item">
+        <a href="{{ .RelPermalink }}" style="color: var(--primary); font-weight: 600;">{{ .Title }}</a>
+        <span style="color: var(--tertiary); font-size: 0.85rem;">{{ .Date.Format "01-02" }}</span>
+      </li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

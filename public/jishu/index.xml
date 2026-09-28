@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>协议与进阶 on 梯子手册 - 新手科学上网与稳定高速机场推荐指南 </title>
+    <link>https://tzshouce.cyou/jishu/</link>
+    <description>Recent content in 协议与进阶 on 梯子手册 - 新手科学上网与稳定高速机场推荐指南 </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 28 Sep 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://tzshouce.cyou/jishu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BGP 多线中继入口与智能负载均衡调度技术拆解</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-5/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-5/</guid>
+      <description>深度技术解析：BGP 多线中继入口与智能负载均衡调度技术拆解。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+    <item>
+      <title>DNS 污染与 DNS 泄露机制剖析：如何配置 DoH 加密防护</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-4/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-4/</guid>
+      <description>深度技术解析：DNS 污染与 DNS 泄露机制剖析：如何配置 DoH 加密防护。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+    <item>
+      <title>IPLC 物理专线与 BGP 中继传输机制对比：原理与晚高峰稳定性分析</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-1/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-1/</guid>
+      <description>深度技术解析：IPLC 物理专线与 BGP 中继传输机制对比：原理与晚高峰稳定性分析。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+    <item>
+      <title>Shadowsocks, Trojan 与 Hysteria2 代理协议抗封锁能力横向测评</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-2/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-2/</guid>
+      <description>深度技术解析：Shadowsocks, Trojan 与 Hysteria2 代理协议抗封锁能力横向测评。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+    <item>
+      <title>TUN 模式与系统 HTTP 代理的物理层拦截机制差异</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-6/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-6/</guid>
+      <description>深度技术解析：TUN 模式与系统 HTTP 代理的物理层拦截机制差异。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+    <item>
+      <title>代理客户端分流规则 ACL4SSR 配置与自定义 Direct / Proxy 语法</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-3/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-3/</guid>
+      <description>深度技术解析：代理客户端分流规则 ACL4SSR 配置与自定义 Direct / Proxy 语法。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+    <item>
+      <title>原生 IP (Native IP) 与 广播 IP (Broadcast IP) 对流媒体与 AI 工具的影响</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-7/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-7/</guid>
+      <description>深度技术解析：原生 IP (Native IP) 与 广播 IP (Broadcast IP) 对流媒体与 AI 工具的影响。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+    <item>
+      <title>长途内网 IEPL/IPLC 物理光缆架构与节点延迟极限计算</title>
+      <link>https://tzshouce.cyou/jishu/jishu-article-8/</link>
+      <pubDate>Mon, 28 Sep 2026 10:00:00 +0800</pubDate>
+      <guid>https://tzshouce.cyou/jishu/jishu-article-8/</guid>
+      <description>深度技术解析：长途内网 IEPL/IPLC 物理光缆架构与节点延迟极限计算。从底层网络传输原理、协议伪装、DNS 污染防范到物理光缆延迟极限计算。</description>
+    </item>
+  </channel>
+</rss>

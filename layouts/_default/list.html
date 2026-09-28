@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="container" style="padding-top: 1.5rem;">
+  {{ partial "breadcrumbs.html" . }}
+
+  <div class="section-title-wrap" style="text-align: left; margin: 1rem 0 1.5rem;">
+    <h1 class="section-title" style="display: block;">{{ .Title }}</h1>
+    <p class="section-subtitle">{{ .Description | default "梯子手册 独家整理实用避坑指南与机场推荐分类文章。" }}</p>
+  </div>
+
+  <div class="article-layout">
+    <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+      {{ range .Pages }}
+      <div class="list-article-card">
+        <h2 class="list-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <p class="list-card-summary">{{ .Params.summary | default .Summary | truncate 180 }}</p>
+        <div class="list-card-footer">
+          <div class="list-card-meta">
+            <span class="meta-tag">📅 {{ .Date.Format "2006-01-02" }}</span>
+            <span class="meta-tag">⏱️ 预计阅读 {{ .ReadingTime }} 分钟</span>
+          </div>
+          <a href="{{ .RelPermalink }}" class="btn-read-more">阅读全文 →</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <div class="widget-title">📢 Telegram 官方交流群</div>
+        <p style="font-size: 0.85rem; color: #475569; margin-bottom: 0.75rem;">实时接收节点状态更新与防走丢指南。</p>
+        <a href="https://t.me/+MMnfFgswXis3MjNl" target="_blank" rel="sponsored nofollow noopener" class="tg-btn" style="width: 100%; justify-content: center;">加入 TG 交流群 →</a>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">⚡ 自营主推通道</div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.85rem;">
+          <a href="https://varnexa.lingdongaff.com/#/?code=JoIy7bO1" target="_blank" rel="sponsored nofollow noopener" style="color: #2563eb; font-weight: 700;">🥇 灵动云 (8折: ld88) →</a>
+          <a href="https://varnexa.twilightaff.com/#/?code=KvGly3jY" target="_blank" rel="sponsored nofollow noopener" style="color: #7c3aed; font-weight: 700;">🥈 暮光网络 (8折: mm88) →</a>
+          <a href="https://flycat1.flycatvipaff.cc/#/?code=FOdfcRFH" target="_blank" rel="sponsored nofollow noopener" style="color: #059669; font-weight: 700;">🥉 飞猫云 (8折: flycat888) →</a>
+          <a href="https://edp01.breezenetaff.com/#/?code=He4n3zxg" target="_blank" rel="sponsored nofollow noopener" style="color: #d97706; font-weight: 700;">🎖️ 微风网络 Breezenet →</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+{{ end }}

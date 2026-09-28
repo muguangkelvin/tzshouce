@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="single-container">
+  {{ partial "breadcrumbs.html" . }}
+
+  <div style="margin: 2rem 0;">
+    <h1 style="font-size: 2rem; font-weight: 900; color: var(--primary); margin-bottom: 1rem;">🏷️ 标签集合 (Tags)</h1>
+    <div class="tag-cloud">
+      {{ range .Data.Terms.Alphabetical }}
+      <a href="{{ .Page.RelPermalink }}" class="tag-item"># {{ .Page.Title }} ({{ .Count }})</a>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

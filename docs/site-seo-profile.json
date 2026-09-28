@@ -1,0 +1,95 @@
+{
+  "profileVersion": "2.2.0",
+  "siteTopic": "梯子手册与机场推荐导航",
+  "domain": "https://tzshouce.cyou",
+  "brandName": "梯子手册",
+  "tgLink": "https://t.me/+MMnfFgswXis3MjNl",
+  "primaryKeywords": [
+    "梯子手册",
+    "机场推荐",
+    "梯子推荐",
+    "魔法上网教程",
+    "科学上网指南"
+  ],
+  "secondaryKeywords": [
+    "便宜机场推荐",
+    "稳定梯子节点",
+    "IPLC专线机场",
+    "翻墙机场测速",
+    "节点订阅转换",
+    "4K秒开机场",
+    "高性价比梯子",
+    "机场优惠码"
+  ],
+  "longTailKeywords": [
+    "新手小白梯子配置教程",
+    "手机电脑科学上网入门",
+    "便宜好用的翻墙梯子推荐",
+    "节点超时怎么排错解决",
+    "Shadowrocket/Clash订阅导入图文步骤"
+  ],
+  "heroKeywords": [
+    "梯子手册新手入门",
+    "稳定高速机场推荐",
+    "2026好用梯子精选",
+    "零基础翻墙教程",
+    "4K无缓冲科学上网"
+  ],
+  "footerKeywords": [
+    "梯子手册 tzshouce.cyou",
+    "科学上网新手导航",
+    "稳定机场节点测速",
+    "翻墙客户端配置手册",
+    "免责声明与防走丢指南"
+  ],
+  "top4Providers": [
+    {
+      "rank": 1,
+      "name": "灵动云",
+      "slug": "lingdongyun",
+      "inviteURL": "https://varnexa.lingdongaff.com/#/?code=JoIy7bO1",
+      "coupon": "ld88",
+      "couponNote": "专属8折优惠码: ld88",
+      "priceFrom": "官网为准",
+      "trafficFrom": "灵活多节点",
+      "suitableFor": "多节点智能分流、IPLC专线、低延迟与 4K 秒开",
+      "features": "智能分流/IPLC专线/低延迟/ChatGPT解锁"
+    },
+    {
+      "rank": 2,
+      "name": "暮光网络",
+      "slug": "twilight",
+      "inviteURL": "https://varnexa.twilightaff.com/#/?code=KvGly3jY",
+      "coupon": "mm88",
+      "couponNote": "专属8折优惠码: mm88",
+      "priceFrom": "20元/月",
+      "trafficFrom": "120GB/月",
+      "suitableFor": "晚高峰影音、较大流量和多媒体使用场景",
+      "features": "晚高峰4K秒开/全平台兼容/高速稳定"
+    },
+    {
+      "rank": 3,
+      "name": "飞猫云",
+      "slug": "flycat-cloud",
+      "inviteURL": "https://flycat1.flycatvipaff.cc/#/?code=FOdfcRFH",
+      "coupon": "flycat888",
+      "couponNote": "新用户季付及以上8折优惠码: flycat888",
+      "priceFrom": "84元/年",
+      "trafficFrom": "50GB/月",
+      "suitableFor": "轻量备用、香港线路需求、多设备家庭和新手客户端",
+      "features": "低至7元/月/IEPL专线/自研客户端"
+    },
+    {
+      "rank": 4,
+      "name": "微风网络 Breezenet",
+      "slug": "breezenet",
+      "inviteURL": "https://edp01.breezenetaff.com/#/?code=He4n3zxg",
+      "coupon": "breeze88",
+      "couponNote": "专属8折优惠码: breeze88",
+      "priceFrom": "以结算页为准",
+      "trafficFrom": "待核验",
+      "suitableFor": "轻度使用、低流量年付、自研客户端和第三方订阅导入",
+      "features": "轻量稳定/直连+中继/小白友好"
+    }
+  ]
+}

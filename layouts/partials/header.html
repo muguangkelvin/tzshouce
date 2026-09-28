@@ -1,0 +1,36 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-top">
+      <a href="/" class="brand-logo" title="梯子手册 - 首页">
+        <span class="logo-icon">TZ</span>
+        <span>梯子手册</span>
+      </a>
+
+      <div class="header-right">
+        <form class="header-search" id="searchForm" action="/wenti/" method="get">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="searchInput" placeholder="搜索教程、节点、报错..." aria-label="搜索框">
+        </form>
+
+        <a href="https://t.me/+MMnfFgswXis3MjNl" class="tg-btn" target="_blank" rel="sponsored nofollow noopener" title="Telegram 交流群">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.96 1.25-5.54 3.69-.52.36-1 .54-1.42.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 3.99-1.74 6.66-2.89 8.01-3.45 3.82-1.59 4.61-1.87 5.13-1.88.11 0 .37.03.54.18.14.12.18.29.2.45-.01.07.01.21 0 .36z"/></svg>
+          <span>TG 群</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link {{ if .IsHome }}active{{ end }}">首页</a></li>
+        <li><a href="/jichang-tuijian/" class="nav-link {{ if eq .Section "jichang-tuijian" }}active{{ end }}">精选机场推荐</a></li>
+        <li><a href="/jiaocheng/" class="nav-link {{ if eq .Section "jiaocheng" }}active{{ end }}">新手教程</a></li>
+        <li><a href="/jishu/" class="nav-link {{ if eq .Section "jishu" }}active{{ end }}">协议与进阶</a></li>
+        <li><a href="/wenti/" class="nav-link {{ if eq .Section "wenti" }}active{{ end }}">避坑与 FAQ</a></li>
+        <li><a href="/service/" class="nav-link {{ if eq .Section "service" }}active{{ end }}">服务专区</a></li>
+        <li><a href="/archives/" class="nav-link {{ if eq .RelPermalink "/archives/" }}active{{ end }}">归档</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
